@@ -1,0 +1,48 @@
+header h1{
+    text-align: center; 
+    color: red;
+    background-color: rgba(29, 255, 59, 0.6);
+    border-radius : 15px 15px 0px 0px;
+    animation-name: rainbow;
+    animation-duration: 5s;
+      animation-iteration-count:infinite;
+}
+
+div#input{
+    text-align: center;
+}
+
+div#input input#botao{
+    background-color: rgba(29, 255, 59, 0.966);
+    padding: 8px;
+    border-radius: 12px;
+}
+
+div#input input#botao:hover{
+    background-color: rgb(61, 182, 50);
+}
+
+div#corpo{
+    background: url(https://picsum.photos/400/400);
+    height: 400px;
+    width: 400px; 
+    margin: auto;
+    border-radius: 15px;
+}
+
+section ul#instrucao{
+    color: rgb(255, 255, 255);
+  background-color: rgba(0,0,0,0.8);
+  animation-name: rainbow;
+  animation-duration: infinite;
+}
+
+@keyframes rainbow{
+0%{color:red;}
+14%{color:orange;}
+28%{color:yellow;}
+42%{color:green;}
+56%{color:rgb(10,200,255);}
+71%{color:rgb(0,0,255);}
+85%{color:rgb(130,0,255)} 
+}
