@@ -104,6 +104,13 @@
 </body>
 </html>
 <script>
+    window.onload = function () { 
+        document.getElementById("txtn").addEventListener('keypress',function(e){
+            if (e.key === 'Enter'){
+                chamar();
+            }
+        })
+    }
     function chamar() {
         let txtn = document.getElementById("txtn").value
         let filtro = /\d+/g;
