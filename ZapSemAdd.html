@@ -5,25 +5,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zap Sem Add</title>
-    <link rel="stylesheet" href="styleZap.css">
-    <script src="ZapSemAdd.js"></script>
+    <style>
+        header#header {
+            border-radius: 15px 15px 0px 0px;
+            background: linear-gradient(-45deg, #ffffff, rgb(255, 0, 0), #ffffff);
+            background-size: 400% 400%;
+            animation: backgroudTransition 5s ease-in-out infinite;
+        }
+
+        header h1 {
+            text-align: center;
+            color: red;
+            animation: rainbow 5s ease-in-out infinite;
+        }
+
+        div#input {
+            text-align: center;
+        }
+
+        div#input input#botao {
+            background-color: rgba(29, 255, 59, 0.966);
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        div#input input#botao:hover {
+            background-color: rgb(61, 182, 50);
+        }
+
+        div#input input#txtn {
+            height: 25px;
+            width: 170px;
+            border-radius: 5px;
+        }
+
+        div#corpo {
+            background: url(https://picsum.photos/400/400);
+            height: 400px;
+            width: 400px;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        section ul#instrucao {
+            color: rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.8);
+            animation-name: rainbow;
+            animation-duration: infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                color: rgb(255, 0, 0);
+            }
+
+            50% {
+                color: rgb(255, 255, 255);
+            }
+
+            100% {
+                color: rgb(255, 0, 0);
+            }
+        }
+
+        @keyframes backgroudTransition {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 0%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <div id="corpo">
         <header id="header">
             <h1>Criado Por Marcos Brito</h1>
         </header>
-            <div id="input">
-                <input type="text" name="numerotelefone" id="txtn"  size="15" placeholder="DDD+Número">
-                <input type="button" value="Chamar!" id="botao" onclick="chamar()">
-            </div>
-            <section>
-                <ul id="instrucao">
-                    Instruções de Uso
-                    <li>Digite o Número do Zap</li>
-                    <li>Só funciona para números Brasileiros</li>
-                </ul>
-            </section>  
+        <div id="input">
+            <input type="text" name="numerotelefone" id="txtn" size="15" placeholder="DDD+Número">
+            <input type="button" value="Chamar!" id="botao" onclick="chamar()">
+        </div>
+        <section>
+            <ul id="instrucao">
+                Instruções de Uso
+                <li>Digite o Número do Zap</li>
+                <li>Só funciona para números Brasileiros</li>
+            </ul>
+        </section>
     </div>
 </body>
 </html>
+<script>
+    function chamar() {
+        let txtn = document.getElementById("txtn").value
+        let filtro = /\d+/g;
+        let numero = Number(txtn.match(filtro).join(''));
+        window.open(`https://wa.me/55${numero}`, '_blank')
+    }
+</script>
